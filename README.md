@@ -82,4 +82,15 @@ Types of data that can be send to a worker are :
 
 ### Copying Functions
 
+**Steps :**
+1. Convert function to string.
+2. Get the function arguments and body using regex.
+3. Use `Function` constructor function to create new function using the function arguments and body.
+
 ### Error Handling
+
+**Steps :**
+1. Don't return an error form the worker but handle it in the worket itself.
+2. Wrap it inside a common response object.
+3. Post it to the main thread.
+4. Other than this a error event is also fired from the worker which can be listened in the main thread.
